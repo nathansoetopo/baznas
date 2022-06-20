@@ -1,4 +1,4 @@
-    @extends('layouts/master')
+@extends('layouts/master')
     @section('content')
     <!-- Masthead-->
     <header class="masthead">
@@ -50,7 +50,7 @@
                                 <div class="card-body" style="background-color: #FF9900; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; ">
                                     <h5 class="card-title">Baznas Surakarta</h5>
                                     <p class="card-text" style="background-color: #FF9900; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
-                                        Baznas Surakarta adalah Badan Amil Zakat Nasional (BAZNAS) yang dibentuk di kota
+                                        Baznas Surakarta adalah Badan Amil Zakat Nasional yang dibentuk di kota
                                         Surakarta</p>
                                     <a href="#" class="btn btn-primary2" style="color: black;">Selengkapnya</a>
                                 </div>
@@ -92,11 +92,11 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5">
                 <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5" style="background-color: white; border-radius: 15px; height: auto">
+                    <div class="mt-5" style="background-color: white; border-radius: 15px; height: auto; height:76.5%">
                         <div>&nbsp;</div>
-                        <div class="mb-2"><img src="assets/img/portfolio/logo/penerima.png" style="max-width: 300px; max-height: autox;"><i class="fs-1 text-primary"></i></div>
+                        <div class="mb-2"><img src="assets/img/portfolio/logo/penerima.png" style="max-width: 300px; max-height: auto;"><i class="fs-1 text-primary"></i></div>
                         <h3 class="h5 mb-2" style="color: #FF9900;">PENERIMA</h3>
-                        <p class="h2 mb-2" style="color: #FF9900;"><b>*</b></p>
+                        <p class="h2 mb-2" style="color: #FF9900;"><b>30</b></p>
                         <div>&nbsp;</div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                         <div>&nbsp;</div>
                         <div class="mb-2"><img src="assets/img/portfolio/logo/himpunan.png" style="max-width: 300px; max-height: auto;"><i class="fs-1 text-primary"></i></div>
                         <h3 class="h5 mb-2" style="color: #FF9900;">PENGHIMPUNAN</h3>
-                        <p class="h2 mb-2" style="color: #FF9900;"><b>*</b></p>
+                        <p class="h2 mb-2" style="color: #FF9900;"><b>3</b></p>
                         <div>&nbsp;</div>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                         <div>&nbsp;</div>
                         <div class="mb-2"><img src="assets/img/portfolio/logo/dana.png" style="max-width: 300px; max-height: 200px;"><i class="fs-1 text-primary"></i></div>
                         <h3 class="h6 mb-2" style="color: #FF9900;">DANA YANG TERSALURKAN</h3>
-                        <p class="h2 mb-2" style="color: #FF9900;"><b>*</b></p>
+                        <p class="h2 mb-2" style="color: #FF9900;"><b>15000000</b></p>
                         <div>&nbsp;</div>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                         <div>&nbsp;</div>
                         <div class="mb-2"><img src="assets/img/portfolio/logo/donatur.png" style="max-width: 300px; max-height: 200px;"><i class="fs-1 text-primary"></i></div>
                         <h3 class="h5 mb-2" style="color: #FF9900;">DONATUR</h3>
-                        <p class="h2 mb-2" style="color: #FF9900;"><b>*</b></p>
+                        <p class="h2 mb-2" style="color: #FF9900;"><b>10</b></p>
                         <div>&nbsp;</div>
                     </div>
                 </div>
@@ -222,7 +222,7 @@
                     <div class="card border-0">
                         <div class="card-body p-3" style="border-radius:30px; border:none;">
                             <div class="container" style="height: auto; border-top-left-radius: 30px; border-top-right-radius: 30px; padding-bottom:4%; padding-top:4%; background-color:#01502D;">
-                                <img src="assets/img/portfolio/logo/kantonguang.png" style="max-height: 120px;" class="card-img-top" alt="...">
+                                <img src="assets/img/portfolio/logo/kantonguang.png" style="height: 88%;;" class="card-img-top" alt="...">
                             </div>
                             <div class="container text-white text-center pt-2 pb-2" style="border:none; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; background-color:#FF9900; font-size: clamp(10px, 2vw, 14px);">
                                 ZAKAT
@@ -234,7 +234,7 @@
                     <div class="card border-0">
                         <div class="card-body p-3" style="border-radius:30px; border:none;">
                             <div class="container" style="height: auto; border-top-left-radius: 30px; border-top-right-radius: 30px; padding-bottom:4%; padding-top:4%; background-color:#01502D">
-                                <img src="assets/img/portfolio/logo/iconinfaq.png" style="max-height: 120px;" class="card-img-top" alt="...">
+                                <img src="assets/img/portfolio/logo/iconinfaq.png" style="height: 90%;" class="card-img-top" alt="...">
                             </div>
                             <div class="container text-white text-center pt-2 pb-2" style="border:none; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; background-color:#FF9900; font-size: clamp(10px, 2vw, 14px);">
                                 INFAQ
@@ -246,7 +246,7 @@
                     <div class="card border-0">
                         <div class="card-body p-3" style="border-radius:30px; border:none;">
                             <div class="container" style="height: auto; border-top-left-radius: 30px; border-top-right-radius: 30px; padding-bottom:4%; padding-top:4%; background-color:#01502D">
-                                <img src="assets/img/portfolio/logo/iconsedekah.png" style="max-height: 120px;" class="card-img-top" alt="...">
+                                <img src="assets/img/portfolio/logo/iconsedekah.png" style="height: 75%;" class="card-img-top" alt="...">
                             </div>
                             <div class="container text-white text-center pt-2 pb-2" style="border:none; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; background-color:#FF9900; font-size: clamp(10px, 2vw, 14px);">
                                 SEDEKAH
@@ -258,7 +258,7 @@
                     <div class="card border-0">
                         <div class="card-body p-3" style="border-radius:30px; border:none;">
                             <div class="container" style="height: auto; border-top-left-radius: 30px; border-top-right-radius: 30px; padding-bottom:4%; padding-top:4%; background-color:#01502D">
-                                <img src="assets/img/portfolio/logo/iconfidya.png" style="max-height: 120px;" class="card-img-top" alt="...">
+                                <img src="assets/img/portfolio/logo/iconfidya.png" style="height: 73%;" class="card-img-top" alt="...">
                             </div>
                             <div class="container text-white text-center pt-2 pb-2" style="border:none; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; background-color:#FF9900; font-size: clamp(10px, 2vw, 14px);">
                                 FIDYAH
@@ -325,25 +325,25 @@
                 <div class="col-md-6">
                     <div class="input-group mt-2">
                         <span class="input-group-text" style="background-color: #01502D; color:#fff; width: 120px;">Zakat Fitrah</span>
-                        <span class="input-group-text" style="background-color: #E5E5E5; color: black;">Rp</span>
+                        <span class="input-group-text" style="background-color: #E5E5E5; color: black;">Rp 4000000</span>
                     </div>
                     <div class="input-group mt-2">
                         <span class="input-group-text" style="background-color: #01502D; color:#fff; width: 120px;">Infaq</span>
-                        <span class="input-group-text" style="background-color: #E5E5E5; color: black;">Rp</span>
+                        <span class="input-group-text" style="background-color: #E5E5E5; color: black;">Rp 6500000</span>
                     </div>
                     <div class="input-group mt-2">
                         <span class="input-group-text" style="background-color: #01502D; color:#fff; width: 120px;">Sedekah</span>
-                        <span class="input-group-text" style="background-color: #E5E5E5; color: black;">Rp</span>
+                        <span class="input-group-text" style="background-color: #E5E5E5; color: black;">Rp 5000000</span>
                     </div>
                     <div class="input-group mt-2">
                         <span class="input-group-text" style="background-color: #01502D; color:#fff; width: 120px;">Fidyah</span>
-                        <span class="input-group-text" style="background-color: #E5E5E5; color: black;">Rp</span>
+                        <span class="input-group-text" style="background-color: #E5E5E5; color: black;">Rp 3000000</span>
                     </div>
                     <div class="input-group mt-2">
                         <span class="input-group-text" style="background-color: #01502D; color:#fff; width: 120px;">Total</span>
-                        <span class="input-group-text" style="background-color: #E5E5E5; color: black;">Rp</span>
+                        <span class="input-group-text" style="background-color: #E5E5E5; color: black;">Rp 18500000</span>
                     </div>
-                </div>
+                        </div>
                 <div class="col-md-6">
                     <img src="./assets/img/1.png" class="image-infaq" style="width: 615px; height: 635px; position: absolute; transform: translate(-5%, -15%);" alt="">
                 </div>
@@ -351,14 +351,8 @@
             <canvas id="myChart" class="mt-5" style="width:100%;max-width:700px"></canvas>
         </div>
     </section>
-    <section class="mb-5" id="about">
-        <div class="container">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-12 text-center">
-                    <div>&nbsp;</div>
-                    <div>&nbsp;</div>
-                    <h2 class="text" style="color: #2E3192;">BERITA</h2>
-                    <hr class="divider divider-light" />
+        <section class="mb-5" id="about">
+>
                     <div id="carouselExampleControls" class="carousel slide p-0" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">

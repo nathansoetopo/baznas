@@ -405,7 +405,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white" id="mainNav" style="color: white; border-bottom: #01502D; border-style: solid;">
         <div class="container">
-            <a class="navbar-brand" href="#"><img style="width: 60%;" src="assets/img/portfolio/logo/logo2.png" /></a>
+            <a class="navbar-brand" href="#"><img style="width: 60%;" src="assets/img/logo2.png" /></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav my-2 col-lg-12">
@@ -475,119 +475,119 @@
 </body>
 <!-- Footer-->
 <footer class="footer-clean main-footer">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-6 col-sm-6 col-md-5 item mt-2" style="padding-left: 5%; padding-right: 5%;">
-                <ul>
-                    <li class="mt-3">
-                        <p class="heading-left">Alamat Kantor :</p>
-                        <p class="content-left">
-                            Sumber, Banjarsari, Kota Surakarta,
-                            <br>
-                            Jawa Tengah 57138
-                        </p>
-                    </li>
-                    <li class="mt-3">
-                        <p class="heading-left">Telepon :</p>
-                        <p class="content-left">
-                            081393055550
-                        </p>
-                    </li>
-                    <li class="mt-3">
-                        <p class="heading-left">Email :</p>
-                        <p class="content-left">
-                            baznaskota.surakarta@baznas.go.id
-                        </p>
-                    </li>
-                </ul>
-                <div class="row">
-                    <div class="col-3 col-sm-3 col-lg-3 col-md-3">
-                        <img src="assets/img/baznas.png" class="imagefooter" alt="">
-                    </div>
-                    <div class="col-3 col-sm-3 col-lg-3 col-md-3">
-                        <img src="assets/img/uns.png" class="imagefooter" alt="">
-                    </div>
-                    <div class="col-3 col-sm-3 col-lg-3 col-md-3">
-                        <img src="assets/img/logo-sv.png" class="imagefooter" alt="">
-                    </div>
-                    <div class="col-3 col-sm-3 col-lg-3 col-md-3">
-                        <img src="assets/img/solo2.png" class="imagefooter" alt="">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-6 col-sm-6 col-md-5 item mt-2" style="padding-left: 5%; padding-right: 5%;">
+                    <ul>
+                        <li class="mt-3">
+                            <p class="heading-left">Alamat Kantor :</p>
+                            <p class="content-left">
+                                Sumber, Banjarsari, Kota Surakarta,
+                                <br>
+                                Jawa Tengah 57138
+                            </p>
+                        </li>
+                        <li class="mt-3">
+                            <p class="heading-left">Telepon :</p>
+                            <p class="content-left">
+                                081393055550
+                            </p>
+                        </li>
+                        <li class="mt-3">
+                            <p class="heading-left">Email :</p>
+                            <p class="content-left">
+                                baznaskota.surakarta@baznas.go.id
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="./assets/img/baznas.png" class="image-footer" alt="" style="width: 80px; height: auto; max-height: 150px;">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="./assets/img/uns.png" class="image-footer" alt="" style="width: 80px; height: auto; max-height: 150px;">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="./assets/img/logo-sv.png" class="image-footer" alt="" style="width: 80px; height: auto; max-height: 150px;">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="./assets/img/solo2.png" class="image-footer" alt="" style="width: 60px; height: auto; max-height: 120px;">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-6 col-sm-6 col-md-3 item-menu mt-2">
-                <ul>
-                    <li class="mt-2">
-                        <div class="form-check form-check-inline">
-                            <input style="background-color: white;" checked class="form-check-input bg-secondary border-0" type="checkbox" id="inlineCheckbox1" value="option1" />
-                            <label class="form-check-label" for="inlineCheckbox1">Kebijakan Privasi</label>
-                        </div>
-                    </li>
-                    <li class="mt-2">
-                        <div class="form-check form-check-inline">
-                            <input style="background-color: white;" checked class="form-check-input bg-secondary border-0" type="checkbox" id="inlineCheckbox1" value="option1" />
-                            <label class="form-check-label" for="inlineCheckbox1">Syarat & Ketentuan</label>
-                        </div>
-                    </li>
-                    <li class="mt-2">
-                        <div class="form-check form-check-inline">
-                            <input style="background-color: white;" checked class="form-check-input bg-secondary border-0" type="checkbox" id="inlineCheckbox1" value="option1" />
-                            <label class="form-check-label" for="inlineCheckbox1">FAQ</label>
-                        </div>
-                    </li>
-                </ul>
-                <p class="heading-center">IKUTI KAMI DI :</p>
-                <ul>
-                    <li class="mt-2">
-                        <p class="content-left">
-                            <a href="https://www.facebook.com/baznaskotasurakarta">
-                                <ion-icon name="logo-facebook"></ion-icon>&nbsp baznaskotasurakarta
-                            </a>
-                        </p>
-                    </li>
-                    <li class="mt-2">
-                        <p class="content-left">
-                            <a href="https://www.instagram.com/baznaskota.surakarta/">
-                                <ion-icon name="logo-instagram"></ion-icon>&nbsp baznaskota.surakarta
-                            </a>
-                        </p>
-                    </li>
-                    <li class="mt-2">
-                        <p class="content-left">
-                            <a href="https://twitter.com/BaznaskotaS">
-                                <ion-icon name="logo-twitter"></ion-icon>&nbsp @BaznaskotaS
-                            </a>
-                        </p>
-                    </li>
-                    <li class="mt-2">
-                        <p class="content-left">
-                            <a href="https://www.youtube.com/channel/UChgLCY6zG-hdIWVupT9apVg">
-                                <ion-icon name="logo-youtube"></ion-icon>&nbsp BAZNAS Kota Surakarta
-                            </a>
-                        </p>
-                    </li>
-                    <li class="mt-2">
-                        <p class="content-left">
-                            <a href="http://wa.me/081393055550">
-                                <ion-icon name="logo-whatsapp"></ion-icon>&nbsp 081393055550
-                            </a>
-                        </p>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4 mt-2 pb-2">
-                <img src="assets/img/map.png" style="width: 100%; height: auto;">
+                <div class="col-6 col-sm-6 col-md-3 item-menu mt-2">
+                    <ul>
+                        <li class="mt-2">
+                            <div class="form-check form-check-inline">
+                                <input style="background-color: white;" checked="" class="form-check-input bg-secondary border-0" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">Kebijakan Privasi</label>
+                            </div>
+                        </li>
+                        <li class="mt-2">
+                            <div class="form-check form-check-inline">
+                                <input style="background-color: white;" checked="" class="form-check-input bg-secondary border-0" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">Syarat &amp; Ketentuan</label>
+                            </div>
+                        </li>
+                        <li class="mt-2">
+                            <div class="form-check form-check-inline">
+                                <input style="background-color: white;" checked="" class="form-check-input bg-secondary border-0" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">FAQ</label>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="heading-center">IKUTI KAMI DI :</p>
+                    <ul>
+                        <li class="mt-2">
+                            <p class="content-left">
+                              <a href="https://www.facebook.com/baznaskotasurakarta">
+                                <ion-icon name="logo-facebook" role="img" class="md hydrated" aria-label="logo facebook"></ion-icon>&nbsp; baznaskotasurakarta
+                              </a>
+                            </p>
+                        </li>
+                        <li class="mt-2">
+                            <p class="content-left">
+                              <a href="https://www.instagram.com/baznaskota.surakarta/">
+                                <ion-icon name="logo-instagram" role="img" class="md hydrated" aria-label="logo instagram"></ion-icon>&nbsp; baznaskota.surakarta
+                              </a>
+                            </p>
+                        </li>
+                        <li class="mt-2">
+                            <p class="content-left">
+                              <a href="https://twitter.com/BaznaskotaS">
+                                <ion-icon name="logo-twitter" role="img" class="md hydrated" aria-label="logo twitter"></ion-icon>&nbsp; @BaznaskotaS
+                              </a>
+                            </p>
+                        </li>
+                        <li class="mt-2">
+                            <p class="content-left">
+                              <a href="https://www.youtube.com/channel/UChgLCY6zG-hdIWVupT9apVg">
+                                <ion-icon name="logo-youtube" role="img" class="md hydrated" aria-label="logo youtube"></ion-icon>&nbsp; BAZNAS Kota Surakarta
+                              </a>
+                            </p>
+                        </li>
+                        <li class="mt-2">
+                            <p class="content-left">
+                              <a href="http://wa.me/081393055550">
+                                <ion-icon name="logo-whatsapp" role="img" class="md hydrated" aria-label="logo whatsapp"></ion-icon>&nbsp; 081393055550
+                              </a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mt-2 pb-2">
+                    <img src="assets/img/map.png" style="width: 110%; height: 70%;">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="end-copyright container-fluid">
-        <center>
-            <p class="copyright text-white">
-                Copyright © 2022 Baznas Surakarta. All Rights Reserved
-            </p>
-        </center>
-    </div>
-</footer>
+        <div class="end-copyright container-fluid">
+            <center>
+                <p class="copyright text-white">
+                    Copyright © 2022 Baznas Surakarta. All Rights Reserved
+                </p>
+            </center>
+        </div>
+    </footer>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- SimpleLightbox plugin JS-->
@@ -609,7 +609,7 @@
 
 <script>
     var xValues = ["Zakat Fitrah", "Infaq", "Sedekah", "Fidyah"];
-    var yValues = [0, 0, 0, 0];
+    var yValues = [4000000, 6500000, 5000000, 3000000, 100000, 10000000];
     var barColors = ["#01502D", "#FF9900", "#C4C4C4", "#2E3192", "#2E3192"];
 
     new Chart("myChart", {
@@ -631,6 +631,7 @@
             }
         }
     });
+
 </script>
 
 </html>
