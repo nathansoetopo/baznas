@@ -17,12 +17,14 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             UserSeeder::class,
+            CategoryData::class,
             KabarSeeder::class,
-            InspirasiSeeder::class,
-            ArtikelSeeder::class,
+            // KabarSeeder::class,
+            // InspirasiSeeder::class,
+            // ArtikelSeeder::class,
             GaleriSeeder::class,
             PenyaluranSeeder::class,
-            CategoryData::class,
+            // CategoryData::class,
             DataZisSeeder::class,
         ]);
     }

@@ -30,18 +30,11 @@
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-newspaper"></i> <span>Kabar</span></a>
                 <ul class="dropdown-menu">
-                    <li>
-                        <a class="nav-link" href="{{ url('admin/kabarzakat') }}"> <span>Data Kabar Zakat</span></a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="{{ url('admin/artikel') }}"> <span>Data Artikel</span></a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="{{ url('admin/inspirasi') }}"> <span>Data Inspirasi</span></a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="{{ url('admin/galeri') }}"> <span>Data Galeri</span></a>
-                    </li>
+                    @foreach ($category as $c)
+                        <li>
+                            <a class="nav-link" href="/admin/kabar/{{$c->id}}/category"><span>{{$c->display}}</span></a>
+                        </li>
+                    @endforeach
                 </ul>
             </li>
             <li class="dropdown">

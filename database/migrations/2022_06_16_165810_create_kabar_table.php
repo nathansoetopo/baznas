@@ -13,11 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('berita', function (Blueprint $table) {
+        Schema::create('kabar', function (Blueprint $table) {
             $table->id();
             $table->string('judul')->nullable();
-            $table->string('deskripsi')->nullable();
+            $table->text('deskripsi')->nullable();
             $table->string('gambar')->nullable();
+            $table->enum('status',['ACTIVE','INACTIVE'])->default('ACTIVE');
+            $table->foreignId('penulis')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('kategori')->constrained('category_data')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

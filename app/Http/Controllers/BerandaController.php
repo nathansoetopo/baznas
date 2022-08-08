@@ -7,6 +7,7 @@ use App\Models\Artikel;
 use App\Models\CategoryData;
 use App\Models\DataZis;
 use App\Models\Inspirasi;
+use App\Models\KabarModel;
 use App\Models\KabarZakat;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -14,136 +15,164 @@ use Illuminate\Support\Facades\DB;
 
 class BerandaController extends Controller
 {
+    protected $category;
+    public function __construct()
+    {
+        $this->category = CategoryData::where('jenis', 'kabar')->get();
+    }
+
     public function index()
     {
-        $kabar = KabarZakat::latest()->take(3)->get();
-        $artikel = Artikel::latest()->take(3)->get();
-        $inspirasi = Inspirasi::latest()->take(3)->get();
-        $distKabar = KabarZakat::latest()->first();
-        $distArtikel = Artikel::latest()->first();
-        $distInspirasi = Inspirasi::latest()->first();
+        $category = $this->category;
+        $min = CategoryData::where('jenis', 'kabar')->min('id');
+        $data = KabarModel::with('category')->where('kategori', $min)->orderBy('created_at', 'DESC')->take(3)->get();
+        $highlight = KabarModel::with('category')->latest('created_at')->take(3)->get();
+        $test = KabarModel::select('kategori')->distinct('kategori')->orderBy('kategori', 'ASC')->get();
         $galeri = Galeri::latest()->take(4)->get();
         $penyalur = DB::table('penyaluran')->first();
         $fitrah = DataZis::where('kategori', 1)->sum('price');
         $infaq = DataZis::where('kategori', 2)->sum('price');
         $sedekah = DataZis::where('kategori', 3)->sum('price');
         $fidyah = DataZis::where('kategori', 4)->sum('price');
-        return view('index',compact('kabar','artikel','inspirasi','distArtikel','distKabar','distInspirasi','galeri', 'penyalur', 'fitrah', 'infaq', 'sedekah', 'fidyah'));
+        return view('index',compact('data','highlight','galeri','penyalur','fitrah','infaq','sedekah', 'fidyah', 'min', 'test', 'category'));
     }
 
     public function legalitas()
     {
-        return view('tentang-kami.legalitas');
+        $category = $this->category;
+        return view('tentang-kami.legalitas', compact('category'));
     }
 
     public function visiMisi()
     {
-        return view('tentang-kami.visi-misi');
+        $category = $this->category;
+        return view('tentang-kami.visi-misi', compact('category'));
     }
 
     public function strukturOrganisasi()
     {
-        return view('tentang-kami.struktur-organisasi');
+        $category = $this->category;
+        return view('tentang-kami.struktur-organisasi', compact('category'));
     }
 
     public function organisasi()
     {
-        return view('tentang-kami.organisasi');
+        $category = $this->category;
+        return view('tentang-kami.organisasi', compact('category'));
     }
 
     public function sejarahOrganisasi()
     {
-        return view('tentang-kami.sejarah-organisasi');
+        $category = $this->category;
+        return view('tentang-kami.sejarah-organisasi', compact('category'));
     }
 
     public function zakat()
     {
-        return view('bayar.zakat');
+        $category = $this->category;
+        return view('bayar.zakat', compact('category'));
     }
 
     public function inspirasi()
     {
-        return view('kabar.inspirasi');
+        $category = $this->category;
+        return view('kabar.inspirasi', compact('category'));
     }
 
     public function article()
     {
-        return view('kabar.article');
+        $category = $this->category;
+        return view('kabar.article', compact('category'));
     }
 
     public function pendistribusian()
     {
-        return view('kabar.pendistribusian');
+        $category = $this->category;
+        return view('kabar.pendistribusian', compact('category'));
     }
 
     public function videoKegiatan()
     {
-        return view('kabar.video-kegiatan');
+        $category = $this->category;
+        return view('kabar.video-kegiatan', compact('category'));
     }
 
     public function hubungiKami()
     {
-        return view('hubungi-kami');
+        $category = $this->category;
+        return view('hubungi-kami', compact('category'));
     }
 
     public function notFound()
     {
-        return view('404');
+        $category = $this->category;
+        return view('404', compact('category'));
     }
 
     public function rekeningZakat()
     {
-        return view('layanan.rekening-zakat');
+        $category = $this->category;
+        return view('layanan.rekening-zakat', compact('category'));
     }
 
     public function rekeningInfak()
     {
-        return view('layanan.rekening-infak');
+        $category = $this->category;
+        return view('layanan.rekening-infak', compact('category'));
     }
 
     public function rekeningSedekah()
     {
-        return view('layanan.rekening-sedekah');
+        $category = $this->category;
+        return view('layanan.rekening-sedekah', compact('category'));
     }
 
     public function rekeningFidyah()
     {
-        return view('layanan.rekening-fidyah');
+        $category = $this->category;
+        return view('layanan.rekening-fidyah', compact('category'));
     }
 
     public function rekeningPembayaran()
     {
-        return view('layanan.layanan-pembayaran');
+        $category = $this->category;
+        return view('layanan.layanan-pembayaran', compact('category'));
     }
 
     public function programKKN()
     {
-        return view('program.program-kkn');
+        $category = $this->category;
+        return view('program.program-kkn', compact('$this->category'));
     }
 
     public function programBeasiswa()
     {
-        return view('program.program-beasiswa');
+        $category = $this->category;
+        return view('program.program-beasiswa', compact('category'));
     }
 
     public function programDistribusi()
     {
-        return view('program.program-distribusi');
+        $category = $this->category;
+        return view('program.program-distribusi', compact('category'));
     }
 
     public function programPemberdayaan()
     {
-        return view('program.program-permberdayaan');
+        $category = $this->category;
+        return view('program.program-permberdayaan', compact('category'));
     }
 
     public function programSantunan()
     {
-        return view('program.program-santunan');
+        $category = $this->category;
+        return view('program.program-santunan', compact('category'));
     }
 
     public function programSubsidi()
     {
-        return view('program.program-subsidi');
+        $category = $this->category;
+        return view('program.program-subsidi', compact('category'));
     }
 
     // public function indexFitrah()
@@ -207,8 +236,9 @@ class BerandaController extends Controller
     // }
 
     public function editDanaTersalurkan(){
+        $category = $this->category;
         $data = DB::table('penyaluran')->latest('updated_at')->first();
-        return view('index.data-penyaluran',compact('data'));
+        return view('index.data-penyaluran',compact('data', 'category'));
     }
 
     public function storeDanaTersalurkan(Request $request){

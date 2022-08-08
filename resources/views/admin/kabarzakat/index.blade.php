@@ -18,13 +18,13 @@
                     <div class="section-header">
                         <h1>Admin Page</h1>
                     </div>
-                    <a href="{{ route('add.kabarzakat') }}" class="btn btn-success mb-1"><i class="fa fa-plus" aria-hidden="true"></i> Input Kabar Zakat </a>
+                    <a href="{{ url('admin/add/kabar/category/'.$id) }}" class="btn btn-success mb-1"><i class="fa fa-plus" aria-hidden="true"></i> Input Kabar Zakat </a>
                     <div class="section-body">
                         <div class="row">
                             <div class="col-12 ">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4>Tabel Kabar Zakat</h4>
+                                        <h4>Data Kabar</h4>
                                     </div>
                                     <div class="card-body">
                                         @if (session('success'))
@@ -51,7 +51,7 @@
                                                     @php
                                                     $no=1;
                                                     @endphp
-                                                    @foreach ($kabarzakat as $b)
+                                                    @foreach ($data as $b)
                                                     <tr>
                                                         <th scope="row">{{ $no++ }}</th>
                                                         <td>{{ $b->judul }}</td>
@@ -67,18 +67,20 @@
                                                             @endif
                                                         </td>
                                                         <td>
-                                                            <a href="{{ url('admin/kabarzakat/edit/'.$b->id) }}"
+                                                            <a href="{{ url('admin/kabar/edit/'.$b->id.'/'.$id) }}"
                                                                 class="btn btn-transparent text-center text-dark">
                                                                 <i class="fas fa-edit fa-2x"></i>
                                                             </a>
-                                                            <a href="{{ url('admin/kabarzakat/status/'.$b->id) }}"
-                                                            class="btn btn-transparent text-center text-dark" >
-                                                            <i class="fas fa-power-off"></i>
-                                                            </a>
-                                                            <a  href="{{ url('admin/kabarzakat/delete/'.$b->id) }}"
+                                                            <a href="{{ url('admin/kabar/status/'.$b->id) }}"
                                                                 class="btn btn-transparent text-center text-dark" >
-                                                                <i class="fas fa-trash-alt fa-2x"></i>
+                                                                <i class="fas fa-power-off"></i>
                                                             </a>
+                                                            @if ($b->status == 'INACTIVE')
+                                                                <a  href="{{ url('admin/kabar/delete/'.$b->id.'/'.$id) }}"
+                                                                    class="btn btn-transparent text-center text-dark" >
+                                                                    <i class="fas fa-trash-alt fa-2x"></i>
+                                                                </a>
+                                                            @endif
                                                         </td>
                                                     </tr>
                                                     @endforeach

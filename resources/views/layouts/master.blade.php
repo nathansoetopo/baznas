@@ -29,8 +29,8 @@
     <!--Icon-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script type="text/javascript"
-        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -39,13 +39,11 @@
                 autoDisplay: false
             }, 'google_translate_element');
         }
-
     </script>
     {{-- Style --}}
     <link href="{{ asset('css/basnaz.css') }}" rel="stylesheet">
     <!--Chart-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 
 <body id="page-top">
@@ -105,14 +103,15 @@
                             data-bs-toggle="dropdown" aria-expanded="false">Kabar</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarKabar"
                             style="border-top: #01502D; border-style: solid;">
-                            <li><a class="dropdown-item" href="{{ url('kabar-zakat') }}">Kabar Zakat</a></li>
-                            <li><a class="dropdown-item" href="{{ url('artikel') }}">Artikel</a></li>
-                            <li><a class="dropdown-item" href="{{ url('inspirasi') }}">Inspirasi</a></li>
+                            @foreach ($category as $c)
+                                <li><a class="dropdown-item"
+                                        href="{{ url('kabar-list/' . $c->id) }}">{{ $c->display }}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link text-dark" href="/hubungi-kami">Hubungi</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="/zakat"><button class=" btn btn-primary"
-                                style="border-radius: 10px;">
+                    <li class="nav-item"><a class="nav-link text-dark" href="/zakat"><button
+                                class=" btn btn-primary" style="border-radius: 10px;">
                                 <i class="fas fa-wallet"></i> Bayar Zakat</button>
                         </a></li>
                     <li class="nav-item dropdown">
@@ -132,8 +131,8 @@
                                         class="border-0 border-circle"
                                         style="max-width: 20px; max-height: 20px; margin-right: 4%; margin-bottom: 2%;"
                                         alt="">EN</a></li>
-                            <li><a class="dropdown-item" href="#"><img src="{{ asset('assets/img/chin.png') }}"
-                                        class="border-0 border-circle"
+                            <li><a class="dropdown-item" href="#"><img
+                                        src="{{ asset('assets/img/chin.png') }}" class="border-0 border-circle"
                                         style="max-width: 20px; max-height: 20px; margin-right: 4%; margin-bottom: 2%;"
                                         alt="">CHI</a></li>
                         </ul>
@@ -174,16 +173,16 @@
                 </ul>
                 <div class="row">
                     <div class="col-3 col-sm-3 col-lg-3 col-md-3">
-                        <img src="{{asset('assets/img/baznas.png')}}" class="imagefooter" alt="">
+                        <img src="{{ asset('assets/img/baznas.png') }}" class="imagefooter" alt="">
                     </div>
                     <div class="col-3 col-sm-3 col-lg-3 col-md-3">
-                        <img src="{{asset('assets/img/uns.png')}}" class="imagefooter" alt="">
+                        <img src="{{ asset('assets/img/uns.png') }}" class="imagefooter" alt="">
                     </div>
                     <div class="col-3 col-sm-3 col-lg-3 col-md-3">
-                        <img src="{{asset('assets/img/logo-sv.png')}}" class="imagefooter" alt="">
+                        <img src="{{ asset('assets/img/logo-sv.png') }}" class="imagefooter" alt="">
                     </div>
                     <div class="col-3 col-sm-3 col-lg-3 col-md-3">
-                        <img src="{{asset('assets/img/solo2.png')}}" class="imagefooter" alt="">
+                        <img src="{{ asset('assets/img/solo2.png') }}" class="imagefooter" alt="">
                     </div>
                 </div>
             </div>
@@ -254,7 +253,7 @@
                 </ul>
             </div>
             <div class="col-md-4 mt-2 pb-2">
-                <img src="{{asset('assets/img/map.png')}}" style="width: 100%; height: auto;">
+                <img src="{{ asset('assets/img/map.png') }}" style="width: 100%; height: auto;">
             </div>
         </div>
     </div>
@@ -289,8 +288,8 @@
         alert = '';
     }
     // Zakat Fitrah
-    $(document).ready(function () {
-        $(document).on('click', '#hitungFitrah', function () {
+    $(document).ready(function() {
+        $(document).on('click', '#hitungFitrah', function() {
             var price = $('#priceFitrah').val();
             var weight = 2.5;
             $.ajax({
@@ -303,7 +302,7 @@
                     price: price,
                     weight: weight,
                 },
-                success: function (response) {
+                success: function(response) {
                     $('#resultFitrah').val(response);
                 }
             })
@@ -311,8 +310,8 @@
     });
 
     // Zakat Maal
-    $(document).ready(function () {
-        $(document).on('click', '#hitungMaal', function () {
+    $(document).ready(function() {
+        $(document).on('click', '#hitungMaal', function() {
             var gajiPokok = $('#gajiPokok').val();
             var tunjangan = $('#tunjangan').val();
             var hutang = $('#hutang').val();
@@ -327,7 +326,7 @@
                     tunjangan: tunjangan,
                     hutang: hutang,
                 },
-                success: function (response) {
+                success: function(response) {
                     resetErrors()
                     if (response.errors) {
                         for (let i = 0; i < response.errors.length; i++) {
@@ -346,8 +345,8 @@
     });
 
     // Zakat Fidyah
-    $(document).ready(function () {
-        $(document).on('click', '#hitungFidyah', function () {
+    $(document).ready(function() {
+        $(document).on('click', '#hitungFidyah', function() {
             var day = $('#day').val();
             var soul = $('#soul').val();
             $.ajax({
@@ -360,7 +359,7 @@
                     hari: day,
                     jiwa: soul,
                 },
-                success: function (response) {
+                success: function(response) {
                     resetErrors()
                     if (response.errors) {
                         for (let i = 0; i < response.errors.length; i++) {
@@ -378,8 +377,8 @@
     });
 
     // Qurban
-    $(document).ready(function () {
-        $(document).on('click', '#hitungQurban', function () {
+    $(document).ready(function() {
+        $(document).on('click', '#hitungQurban', function() {
             var qurban = $('#qurban').val();
             $.ajax({
                 headers: {
@@ -390,7 +389,7 @@
                 data: {
                     jenisQurban: qurban,
                 },
-                success: function (response) {
+                success: function(response) {
                     resetErrors()
                     if (response.errors) {
                         for (let i = 0; i < response.errors.length; i++) {
@@ -408,8 +407,8 @@
     });
 
     // Infaq
-    $(document).ready(function () {
-        $(document).on('click', '#hitungInfaq', function () {
+    $(document).ready(function() {
+        $(document).on('click', '#hitungInfaq', function() {
             var gaji = $('#gaji').val();
             var tunjangan = $('#tunjangan').val();
             $.ajax({
@@ -422,7 +421,7 @@
                     gaji: gaji,
                     tunjangan: tunjangan,
                 },
-                success: function (response) {
+                success: function(response) {
                     resetErrors()
                     if (response.errors) {
                         for (let i = 0; i < response.errors.length; i++) {
@@ -438,30 +437,78 @@
             })
         });
     });
+</script>
+@if (Request::is('/'))
+    <script>
+        $(document).on('click', '#next', function() {
+            var data = $('#next').data("id");
+            var move = 'next';
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: "{{ url('/next-carrousel') }}",
+                method: 'POST',
+                data: {
+                    data: data,
+                    array: {!! json_encode($test) !!},
+                    move: move,
+                },
+                success: function(response) {
+                    $('#result-carrousel').fadeOut(1000, function() {
+                        $('#result-carrousel').html(response);
+                        $("#result-carrousel").fadeIn(1000);
+                    });
+                }
+            })
+        });
 
-</script>
+        $(document).on('click', '#prev', function() {
+            var data = $('#next').data("id");
+            var move = 'prev';
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: "{{ url('/next-carrousel') }}",
+                method: 'POST',
+                data: {
+                    data: data,
+                    array: {!! json_encode($test) !!},
+                    move: move,
+                },
+                success: function(response) {
+                    $('#result-carrousel').fadeOut(1000, function() {
+                        $('#result-carrousel').html(response);
+                        $("#result-carrousel").fadeIn(1000);
+                    });
+                }
+            })
+        });
+    </script>
+@endif
 @if (!empty($fitrah) && !empty($infaq) && !empty($sedekah) && !empty($fidyah))
-<script>
-    var xValues = ["Zakat Fitrah", "Infaq", "Sedekah", "Fidyah"];
-    var yValues = [{!! $fitrah !!}, {!! $infaq !!}, {!! $sedekah !!}, {!! $fidyah !!}];
-    var barColors = ["#01502D", "#FF9900", "#C4C4C4", "#2E3192", "#2E3192"];
-    new Chart("myChart", {
-    type: "pie",
-    data: {
-        labels: xValues,
-        datasets: [{
-        backgroundColor: barColors,
-        data: yValues
-        }]
-    },
-    options: {
-        title: {
-        display: true,
-        text: "Laporan Data"
-        }
-    }
-})
-</script>
+    <script>
+        var xValues = ["Zakat Fitrah", "Infaq", "Sedekah", "Fidyah"];
+        var yValues = [{!! $fitrah !!}, {!! $infaq !!}, {!! $sedekah !!}, {!! $fidyah !!}];
+        var barColors = ["#01502D", "#FF9900", "#C4C4C4", "#2E3192", "#2E3192"];
+        new Chart("myChart", {
+            type: "pie",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Laporan Data"
+                }
+            }
+        })
+    </script>
 @endif
 
 </html>

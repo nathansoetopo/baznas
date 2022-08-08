@@ -17,24 +17,39 @@ class CategoryData extends Seeder
     {
         collect([
             [
-                'id' => 1,
                 'name' => 'fitrah',
                 'display' => 'Fitrah',
+                'jenis' => 'laporan',
             ],
             [
-                'id' => 2,
                 'name' => 'infaq',
                 'display' => 'Infaq',
+                'jenis' => 'laporan',
             ],
             [
-                'id' => 3,
                 'name' => 'sedekah',
                 'display' => 'Sedekah',
+                'jenis' => 'laporan',
             ],
             [
-                'id' => 4,
                 'name' => 'fidyah',
                 'display' => 'Fidyah',
+                'jenis' => 'laporan',
+            ],
+            [
+                'name' => 'zakat',
+                'display' => 'Kabar Zakat',
+                'jenis' => 'kabar',
+            ],
+            [
+                'name' => 'artikel',
+                'display' => 'Artikel',
+                'jenis' => 'kabar',
+            ],
+            [
+                'name' => 'inspirasi',
+                'display' => 'Inspirasi',
+                'jenis' => 'kabar',
             ],
         ])->each(function ($data) {
             Category::create($data);

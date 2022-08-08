@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CategoryData extends Model
+class KabarModel extends Model
 {
     use HasFactory;
-    protected $table = 'category_data';
+    protected $table = 'kabar';
     protected $guarded = ['id'];
 
-    public function kabar(){
-        return $this->hasMany(KabarModel::class, 'kategori', 'id');
+    public function category(){
+        return $this->belongsTo(CategoryData::class, 'kategori')->where('jenis', 'kabar');
     }
 }

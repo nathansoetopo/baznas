@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('artikel', function (Blueprint $table) {
-            $table->id();
-            $table->string('judul')->nullable();
-            $table->longText('deskripsi')->nullable();
-            $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
-            $table->string('gambar')->nullable();
-            $table->timestamps();
-        });
+        // Schema::create('artikel', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('judul')->nullable();
+        //     $table->longText('deskripsi')->nullable();
+        //     $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
+        //     $table->string('gambar')->nullable();
+        //     $table->timestamps();
+        // });
     }
 
     /**

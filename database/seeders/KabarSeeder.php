@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\KabarModel;
 use App\Models\KabarZakat;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -19,20 +20,89 @@ class KabarSeeder extends Seeder
             [
                 'judul' => 'Gaopo dik, ayu iku pilihan',
                 'deskripsi' => 'Gaopo dik, ayu iku pilihan',
-                'gambar' => 'uploads/kabarzakat/diki.png',
+                'gambar' => 'uploads/galeri/mikel.jpeg',
+                'penulis' => 1,
+                'kategori' => 5,
             ],
             [
                 'judul' => 'Koe kok iso geh iku pie tan',
                 'deskripsi' => 'Gaopo tan, ayu iku pilihan',
-                'gambar' => 'uploads/kabarzakat/nathan.jpeg',
+                'gambar' => 'uploads/galeri/mikel.jpeg',
+                'penulis' => 1,
+                'kategori' => 5,
             ],
             [
                 'judul' => 'Gak ngono a cel hehehehehe?',
                 'deskripsi' => 'Gaopo cel, ayu iku pilihan',
-                'gambar' => 'uploads/kabarzakat/mikel.jpeg',
+                'gambar' => 'uploads/galeri/mikel.jpeg',
+                'penulis' => 1,
+                'kategori' => 5,
+            ],
+            [
+                'judul' => 'Gaopo dik, ayu iku pilihan',
+                'deskripsi' => 'Gaopo dik, ayu iku pilihan',
+                'gambar' => 'uploads/galeri/mikel.jpeg',
+                'penulis' => 1,
+                'kategori' => 5,
+            ],
+            [
+                'judul' => 'Koe kok iso geh iku pie tan',
+                'deskripsi' => 'Gaopo tan, ayu iku pilihan',
+                'gambar' => 'uploads/galeri/mikel.jpeg',
+                'penulis' => 1,
+                'kategori' => 6,
+            ],
+            [
+                'judul' => 'Gak ngono a cel hehehehehe?',
+                'deskripsi' => 'Gaopo cel, ayu iku pilihan',
+                'gambar' => 'uploads/galeri/mikel.jpeg',
+                'penulis' => 1,
+                'kategori' => 6,
+            ],
+            [
+                'judul' => 'Koe kok iso geh iku pie tan',
+                'deskripsi' => 'Gaopo tan, ayu iku pilihan',
+                'gambar' => 'uploads/galeri/mikel.jpeg',
+                'penulis' => 1,
+                'kategori' => 6,
+            ],
+            [
+                'judul' => 'Gak ngono a cel hehehehehe?',
+                'deskripsi' => 'Gaopo cel, ayu iku pilihan',
+                'gambar' => 'uploads/galeri/mikel.jpeg',
+                'penulis' => 1,
+                'kategori' => 6,
+            ],
+            [
+                'judul' => 'Koe kok iso geh iku pie tan',
+                'deskripsi' => 'Gaopo tan, ayu iku pilihan',
+                'gambar' => 'uploads/galeri/mikel.jpeg',
+                'penulis' => 1,
+                'kategori' => 7,
+            ],
+            [
+                'judul' => 'Gak ngono a cel hehehehehe?',
+                'deskripsi' => 'Gaopo cel, ayu iku pilihan',
+                'gambar' => 'uploads/galeri/mikel.jpeg',
+                'penulis' => 1,
+                'kategori' => 7,
+            ],
+            [
+                'judul' => 'Koe kok iso geh iku pie tan',
+                'deskripsi' => 'Gaopo tan, ayu iku pilihan',
+                'gambar' => 'uploads/galeri/mikel.jpeg',
+                'penulis' => 1,
+                'kategori' => 7,
+            ],
+            [
+                'judul' => 'Gak ngono a cel hehehehehe?',
+                'deskripsi' => 'Gaopo cel, ayu iku pilihan',
+                'gambar' => 'uploads/galeri/mikel.jpeg',
+                'penulis' => 1,
+                'kategori' => 7,
             ],
         ])->each(function($kabar){
-            KabarZakat::create($kabar);
+            KabarModel::create($kabar);
         });
     }
 }

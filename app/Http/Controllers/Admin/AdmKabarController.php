@@ -113,8 +113,7 @@ class AdmKabarController extends Controller
 
     public function indexKabarZakat()
     {
-        $kabarzakat = KabarZakat::latest()->get();
-        return view('admin.kabarzakat.index', compact('kabarzakat'));
+        return view('admin.kabarzakat.index');
     }
 
     public function createKabarZakat()

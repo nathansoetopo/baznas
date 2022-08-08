@@ -23,7 +23,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4>Edit Berita</h4>
+                                        <h4>Edit {{$detail->display}}</h4>
                                     </div>
                                     <div class="card-body">
                                         @if (session('success'))
@@ -34,22 +34,22 @@
                                             </button>
                                         </div>
                                         @endif
-                                        <form action="{{ url('admin/berita/update/'.$berita->id) }}" method="POST"
+                                        <form action="{{ url('admin/kabar/edit/'.$data->id.'/'.$detail->id) }}" method="POST"
                                             enctype="multipart/form-data">
                                             @csrf
-                                            <input type="hidden" name="old_image" value="{{ $berita->gambar }}">
+                                            <input type="hidden" name="old_image" value="{{ $data->gambar }}">
                                             <div class="form-group row mb-4">
                                                 <label
                                                     class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Judul</label>
                                                 <div class="col-sm-12 col-md-7">
-                                                    <input type="text" class="form-control" name="judul" value="{{ $berita->judul }}">
+                                                    <input type="text" class="form-control" name="judul" value="{{ $data->judul }}">
                                                 </div>
                                             </div>
                                             <div class="form-group row mb-4">
                                                 <label
                                                     class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi</label>
                                                 <div class="col-sm-12 col-md-7">
-                                                    <textarea style="height: 150px;" name="deskripsi" class="form-control summernote-simple">{{ $berita->deskripsi }}</textarea>
+                                                    <textarea style="height: 150px;" name="deskripsi" class="form-control summernote-simple">{{ $data->deskripsi }}</textarea>
                                                 </div>
                                             </div>
 
@@ -58,11 +58,11 @@
                                                     class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Gambar</label>
                                                 <div class="col-sm-12 col-md-7">
                                                     <input type="file" class="form-control" name="gambar" >
-                                                    <img src="{{ asset($berita->gambar) }}" alt=""
+                                                    <img src="{{ asset($data->gambar) }}" alt=""
                                                         style="height: 200px; width:400px;" class="mt-4">
                                                 </div>
                                             </div>
-    
+
                                             <div class="form-group row mb-4">
                                                 <label
                                                     class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
@@ -84,8 +84,10 @@
             </footer>
         </div>
     </div>
-
     @include('admin.stisla.script')
+    <script>
+        CKEDITOR.replace('deskripsi');
+    </script>
 </body>
 
 </html>

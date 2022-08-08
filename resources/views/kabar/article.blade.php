@@ -13,7 +13,7 @@
 <section style="padding-top: 5%; padding-bottom:5%;">
     <div class="container">
         <div class="row">
-            @foreach ($artikel as $b)
+            @foreach ($data as $b)
             @if ($b->status == 'ACTIVE')
             <div class="col-sm-12 col-lg-4 col-md-4 col-12" style="padding: 2%;">
                 <div class="card" style="display: flex; flex-flow: column; height: 100%; flex: 1 1 auto;">
@@ -24,7 +24,7 @@
                         <p class="card-text">
                             {!! \Illuminate\Support\Str::words($b->deskripsi, 10, $end='...') !!}
                         </p>
-                        <a href="{{url('kabar-zakat-detail/'.$b->id)}}" class="btn btn-primary2 text-secondary"
+                        <a href="{{url('kabar-detail/'.$b->id)}}" class="btn btn-primary2 text-secondary"
                             style="float:right; border-radius: 30px; font-size:clamp(10px, 1vw, 18px);">Selengkapnya</a>
                     </div>
                 </div>

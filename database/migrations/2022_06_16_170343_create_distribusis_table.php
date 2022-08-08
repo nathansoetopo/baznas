@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('distribusi', function (Blueprint $table) {
-            $table->id();
-            $table->string('judul')->nullable();
-            $table->string('deskripsi')->nullable();
-            $table->string('gambar')->nullable();
-            $table->timestamps();
-        });
+        // Schema::create('distribusi', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('judul')->nullable();
+        //     $table->string('deskripsi')->nullable();
+        //     $table->string('gambar')->nullable();
+        //     $table->timestamps();
+        // });
     }
 
     /**

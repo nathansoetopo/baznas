@@ -60,11 +60,13 @@ Route::post('/index-fidyah',[KalkulatorController::class,'calcFidyah']);
 Route::post('/index-qurban',[KalkulatorController::class,'calcQurban']);
 Route::post('/index-infaq',[KalkulatorController::class,'calcInfaq']);
 Route::get('kabar-zakat', [KabarController::class, 'KabarZakat']);
-Route::get('kabar-zakat-detail/{id}', [KabarController::class, 'DetailKabarZakat']);
-Route::get('artikel', [KabarController::class, 'Artikel']);
-Route::get('article-detail/{id}', [KabarController::class, 'detailArtikel']);
-Route::get('inspirasi', [KabarController::class, 'Inspirasi']);
-Route::get('inspirasi-detail/{id}', [KabarController::class, 'detailInspirasi']);
+Route::get('kabar-detail/{id}', [KabarController::class, 'detailKabar']);
+Route::get('kabar-list/{id}', [KabarController::class, 'listKabar']);
+// Route::get('artikel', [KabarController::class, 'Artikel']);
+// Route::get('article-detail/{id}', [KabarController::class, 'detailArtikel']);
+// Route::get('inspirasi', [KabarController::class, 'Inspirasi']);
+// Route::get('inspirasi-detail/{id}', [KabarController::class, 'detailInspirasi']);
+Route::post('next-carrousel/', [AjaxController::class, 'slideCarrousel']);
 
 // Backend
 Route::get('login', [AuthController::class, 'login'])->name('login');
@@ -75,37 +77,37 @@ Route::middleware('auth')->group(function () {
         Route::group(['prefix' => 'admin', 'namespace' => 'admin'], function () {
             Route::get('logout', [AuthController::class, 'logout'])->name('logout');
             Route::get('/', [HomeController::class, 'index']);
-            Route::get('berita', [AdmKabarController::class, 'indexBerita'])->name('index.berita');
-            Route::get('berita/add', [AdmKabarController::class, 'createBerita'])->name('add.berita');
-            Route::post('berita/store', [AdmKabarController::class, 'storeBerita'])->name('store.berita');
-            Route::get('berita/edit/{beritaID}', [AdmKabarController::class, 'editBerita']);
-            Route::post('berita/update/{beritaID}', [AdmKabarController::class, 'updateBerita']);
-            Route::get('berita/delete/{beritaID}', [AdmKabarController::class, 'destroyBerita']);
-            Route::get('berita/status/{beritaID}', [AdmKabarController::class, 'statusBerita']);
+            // Route::get('berita', [AdmKabarController::class, 'indexBerita'])->name('index.berita');
+            // Route::get('berita/add', [AdmKabarController::class, 'createBerita'])->name('add.berita');
+            // Route::post('berita/store', [AdmKabarController::class, 'storeBerita'])->name('store.berita');
+            // Route::get('berita/edit/{beritaID}', [AdmKabarController::class, 'editBerita']);
+            // Route::post('berita/update/{beritaID}', [AdmKabarController::class, 'updateBerita']);
+            // Route::get('berita/delete/{beritaID}', [AdmKabarController::class, 'destroyBerita']);
+            // Route::get('berita/status/{beritaID}', [AdmKabarController::class, 'statusBerita']);
 
-            Route::get('artikel', [AdmKabarController::class, 'indexArtikel'])->name('index.artikel');
-            Route::get('artikel/add', [AdmKabarController::class, 'createArtikel'])->name('add.artikel');
-            Route::post('artikel/store', [AdmKabarController::class, 'storeArtikel'])->name('store.artikel');
-            Route::get('artikel/edit/{artikelID}', [AdmKabarController::class, 'editArtikel']);
-            Route::post('artikel/update/{artikelID}', [AdmKabarController::class, 'updateArtikel']);
-            Route::get('artikel/delete/{artikelID}', [AdmKabarController::class, 'destroyArtikel']);
-            Route::get('artikel/status/{artikelID}', [AdmKabarController::class, 'statusArtikel']);
+            // Route::get('artikel', [AdmKabarController::class, 'indexArtikel'])->name('index.artikel');
+            // Route::get('artikel/add', [AdmKabarController::class, 'createArtikel'])->name('add.artikel');
+            // Route::post('artikel/store', [AdmKabarController::class, 'storeArtikel'])->name('store.artikel');
+            // Route::get('artikel/edit/{artikelID}', [AdmKabarController::class, 'editArtikel']);
+            // Route::post('artikel/update/{artikelID}', [AdmKabarController::class, 'updateArtikel']);
+            // Route::get('artikel/delete/{artikelID}', [AdmKabarController::class, 'destroyArtikel']);
+            // Route::get('artikel/status/{artikelID}', [AdmKabarController::class, 'statusArtikel']);
 
-            Route::get('inspirasi', [AdmKabarController::class, 'indexInspirasi'])->name('index.inspirasi');
-            Route::get('inspirasi/add', [AdmKabarController::class, 'createInspirasi'])->name('add.inspirasi');
-            Route::post('inspirasi/store', [AdmKabarController::class, 'storeInspirasi'])->name('store.inspirasi');
-            Route::get('inspirasi/edit/{inspirasiID}', [AdmKabarController::class, 'editInspirasi']);
-            Route::post('inspirasi/update/{inspirasiID}', [AdmKabarController::class, 'updateInspirasi']);
-            Route::get('inspirasi/delete/{inspirasiID}', [AdmKabarController::class, 'destroyInspirasi']);
-            Route::get('inspirasi/status/{inspirasiID}', [AdmKabarController::class, 'statusInspirasi']);
+            // Route::get('inspirasi', [AdmKabarController::class, 'indexInspirasi'])->name('index.inspirasi');
+            // Route::get('inspirasi/add', [AdmKabarController::class, 'createInspirasi'])->name('add.inspirasi');
+            // Route::post('inspirasi/store', [AdmKabarController::class, 'storeInspirasi'])->name('store.inspirasi');
+            // Route::get('inspirasi/edit/{inspirasiID}', [AdmKabarController::class, 'editInspirasi']);
+            // Route::post('inspirasi/update/{inspirasiID}', [AdmKabarController::class, 'updateInspirasi']);
+            // Route::get('inspirasi/delete/{inspirasiID}', [AdmKabarController::class, 'destroyInspirasi']);
+            // Route::get('inspirasi/status/{inspirasiID}', [AdmKabarController::class, 'statusInspirasi']);
 
-            Route::get('kabarzakat', [AdmKabarController::class, 'indexKabarZakat'])->name('index.kabarzakat');
-            Route::get('kabarzakat/add', [AdmKabarController::class, 'createKabarZakat'])->name('add.kabarzakat');
-            Route::post('kabarzakat/store', [AdmKabarController::class, 'storeKabarZakat'])->name('store.kabarzakat');
-            Route::get('kabarzakat/edit/{kabarzakatID}', [AdmKabarController::class, 'editKabarZakat']);
-            Route::post('kabarzakat/update/{kabarzakatID}', [AdmKabarController::class, 'updateKabarZakat']);
-            Route::get('kabarzakat/delete/{kabarzakatID}', [AdmKabarController::class, 'destroyKabarZakat']);
-            Route::get('kabarzakat/status/{kabarzakatID}', [AdmKabarController::class, 'statusKabarZakat']);
+            // Route::get('kabarzakat', [AdmKabarController::class, 'indexKabarZakat'])->name('index.kabarzakat');
+            // Route::get('kabarzakat/add', [AdmKabarController::class, 'createKabarZakat'])->name('add.kabarzakat');
+            // Route::post('kabarzakat/store', [AdmKabarController::class, 'storeKabarZakat'])->name('store.kabarzakat');
+            // Route::get('kabarzakat/edit/{kabarzakatID}', [AdmKabarController::class, 'editKabarZakat']);
+            // Route::post('kabarzakat/update/{kabarzakatID}', [AdmKabarController::class, 'updateKabarZakat']);
+            // Route::get('kabarzakat/delete/{kabarzakatID}', [AdmKabarController::class, 'destroyKabarZakat']);
+            // Route::get('kabarzakat/status/{kabarzakatID}', [AdmKabarController::class, 'statusKabarZakat']);
 
             Route::get('galeri', [AdmKabarController::class, 'indexGaleri'])->name('index.galeri');
             Route::get('galeri/add', [AdmKabarController::class, 'createGaleri'])->name('add.galeri');
@@ -121,6 +123,15 @@ Route::middleware('auth')->group(function () {
             Route::get('data-zis/edit/{id}', [BerandaController::class, 'editLaporanZis']);
             Route::post('data-zis/edit/{id}', [BerandaController::class, 'updateLaporanZis']);
             Route::get('data-zis/delete/{id}', [BerandaController::class, 'deleteLaporanZis']);
+
+            // Kabar
+            Route::get('kabar/{id}/category', [KabarController::class, 'listKabar']);
+            Route::get('add/kabar/category/{id}', [KabarController::class, 'viewAddKabar']);
+            Route::post('add/kabar/category/{id}', [KabarController::class, 'storeKabar']);
+            Route::get('kabar/edit/{id}/{category}', [KabarController::class, 'viewEditKabar']);
+            Route::post('kabar/edit/{id}/{category}', [KabarController::class, 'storeEditKabar']);
+            Route::get('kabar/status/{id}', [KabarController::class, 'statusKabar']);
+            Route::get('kabar/delete/{id}/{cat}', [KabarController::class, 'deleteKabar']);
         });
     });
 });
