@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Galeri;
 use App\Models\KabarModel;
 use App\Models\CategoryData;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -33,11 +34,10 @@ class KabarController extends Controller
     public function listKabar($id){
         $category = $this->category;
         $data = KabarModel::where('kategori', $id)->get();
-        if(Auth::user()->hasRole('admin')){
+        if(Auth::user() && Auth::user()->hasRole('admin')){
             return view('admin.kabarzakat.index', compact('data', 'category', 'id'));
-        }else{
-            return view('kabar.article', compact('data', 'category', 'id'));
         }
+        return view('kabar.article', compact('data', 'category', 'id'));
     }
 
     public function viewAddKabar($id){
@@ -143,5 +143,99 @@ class KabarController extends Controller
             KabarModel::find($id)->delete();
             return redirect()->back()->with('success', 'Kabar Delete Successfully');
         }
+    }
+
+    public function listCategoryKabar(){
+        $category = $this->category;
+        return view('admin.kabar.list-kategori', compact('category'));
+    }
+
+    public function addCategoryKabar(){
+        $category = $this->category;
+        return view('admin.kabar.add-kategori', compact('category'));
+    }
+
+    public function storeCategoryKabar(Request $request){
+        $validated = $request->validate(
+            [
+                'name' => 'required|unique:category_data|alpha_dash',
+                'display' => 'required|unique:category_data',
+            ]
+        );
+
+        if(!$validated){
+            return redirect('admin/kabar/category')->withErrors($validated)->withInput();
+        }
+
+        CategoryData::create([
+            'name' => $request->name,
+            'display' => $request->display,
+            'created_at' => Carbon::now(),
+            'jenis' => 'kabar',
+        ]);
+
+        return redirect('admin/kabar/category')->with('success', 'Kategori Ditambahkan');
+    }
+
+    public function editCategoryKabar($id){
+        $category = $this->category;
+        $data = CategoryData::find($id);
+        return view('admin.kabar.edit-kategori', compact('data', 'category'));
+    }
+
+    public function updateCategoryKabar($id, Request $request){
+        $validated = $request->validate(
+            [
+                'name' => 'required|alpha_dash',
+                'display' => 'required',
+            ]
+        );
+
+        if(!$validated){
+            return redirect()->back()->withErrors($validated)->withInput();
+        }
+        $get = CategoryData::find($id);
+        if($get->name != $request->name && $get->display != $request->display){
+            $validasi = $request->validate(
+                [
+                    'name' => 'unique:category_data',
+                    'display' => 'unique:category_data',
+                ]
+            );
+        }else if($get->name != $request->name){
+            $validasi = $request->validate(
+                [
+                    'name' => 'unique:category_data',
+                ]
+            );
+        }else if($get->display != $request->display){
+            $validasi = $request->validate(
+                [
+                    'display' => 'unique:category_data',
+                ]
+            );
+        }else{
+            return redirect()->back();
+        }
+
+        if(!$validasi){
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
+
+        $get->update([
+            'name' => $request->name,
+            'display' => $request->display,
+        ]);
+
+        return redirect()->back()->with('success', 'Kategori Diupdate');
+    }
+
+    public function destroyCategoryKabar($id){
+        $data = CategoryData::with('kabar')->where('id', $id)->first();
+        if($data->kabar->count() > 0){
+            return redirect()->back()->with('success', 'Kategori Masih Mengandung Konten');
+        }
+        $data->delete();
+        return redirect()->back()->with('success', 'Kategori Dihapus');
     }
 }

@@ -455,6 +455,7 @@
                     move: move,
                 },
                 success: function(response) {
+                    console.log(response)
                     $('#result-carrousel').fadeOut(1000, function() {
                         $('#result-carrousel').html(response);
                         $("#result-carrousel").fadeIn(1000);
@@ -478,6 +479,7 @@
                     move: move,
                 },
                 success: function(response) {
+                    console.log(response)
                     $('#result-carrousel').fadeOut(1000, function() {
                         $('#result-carrousel').html(response);
                         $("#result-carrousel").fadeIn(1000);

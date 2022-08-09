@@ -132,6 +132,12 @@ Route::middleware('auth')->group(function () {
             Route::post('kabar/edit/{id}/{category}', [KabarController::class, 'storeEditKabar']);
             Route::get('kabar/status/{id}', [KabarController::class, 'statusKabar']);
             Route::get('kabar/delete/{id}/{cat}', [KabarController::class, 'deleteKabar']);
+            Route::get('kabar/category', [KabarController::class, 'listCategoryKabar']);
+            Route::get('kabar/category/add', [KabarController::class, 'addCategoryKabar']);
+            Route::post('kabar/category/add', [KabarController::class, 'storeCategoryKabar']);
+            Route::get('kabar/category/{id}/edit', [KabarController::class, 'editCategoryKabar']);
+            Route::post('kabar/category/{id}/edit', [KabarController::class, 'updateCategoryKabar']);
+            Route::get('kabar/category/{id}/delete', [KabarController::class, 'destroyCategoryKabar']);
         });
     });
 });

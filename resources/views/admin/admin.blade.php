@@ -31,10 +31,10 @@
                                     </div>
                                     <div class="card-wrap">
                                         <div class="card-header">
-                                            <h4>Region</h4>
+                                            <a href="{{url('admin/kabar/category')}}"><h4>Kabar</h4></a>
                                         </div>
                                         <div class="card-body">
-                                            {{-- {{App\Models\Region::count()}} --}}
+                                            {{$category->count()}} Category
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                         </div>
                         <!-- This is where your code ends -->
                     </div>
