@@ -94,7 +94,7 @@
                                 id="nama" name="name">
                         </div>
                         <div class="form-group mt-4">
-                            <label for="telp" class="form-label">Nomor Telefon</label>
+                            <label for="telp" class="form-label">Nomor Telepon</label>
                             <input type="number" placeholder="Masukkan nomor WA" class="form-control text-muted"
                                 id="telp" name="phone">
                         </div>

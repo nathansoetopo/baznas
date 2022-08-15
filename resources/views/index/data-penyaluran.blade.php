@@ -50,7 +50,7 @@
                                                 <label
                                                     class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Penerima</label>
                                                 <div class="col-sm-12 col-md-7">
-                                                    <input type="number" min="0" class="form-control" name="penerima"
+                                                    <input type="text" class="form-control" id="rupiah" name="penerima"
                                                         value="{{ $data->penerima }}">
                                                 </div>
                                             </div>
@@ -58,8 +58,10 @@
                                                 <label
                                                     class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Penghimpun</label>
                                                 <div class="col-sm-12 col-md-7">
-                                                    <input type="number" min="0" class="form-control" name="penghimpun"
-                                                        value="{{ $data->penghimpun }}">
+                                                    <input type="text" class="form-control" id="penghimpun" name="penghimpun"
+                                                    value="{{ $data->penghimpun }}">
+                                                    {{-- <input type="text" class="form-control" id="rupiah" name="penghimpun"
+                                                        value="{{ $data->penghimpun }}"> --}}
                                                 </div>
                                             </div>
 
@@ -68,7 +70,7 @@
                                                     class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Dana
                                                     Tersalurkan</label>
                                                 <div class="col-sm-12 col-md-7">
-                                                    <input type="number" min="0" class="form-control"
+                                                    <input type="text" class="form-control" id="dana_tersalurkan"
                                                         name="dana_tersalurkan" value="{{ $data->dana_tersalurkan }}">
                                                 </div>
                                             </div>
@@ -77,7 +79,7 @@
                                                 <label
                                                     class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Donatur</label>
                                                 <div class="col-sm-12 col-md-7">
-                                                    <input type="number" min="0" class="form-control" name="donatur"
+                                                    <input type="text" class="form-control" id="donatur" name="donatur"
                                                         value="{{ $data->donatur }}">
                                                 </div>
                                             </div>
@@ -105,5 +107,114 @@
     </div>
     @include('admin.stisla.script')
 </body>
-
 </html>
+
+<script type="text/javascript">
+
+    var rupiah = document.getElementById('rupiah');
+    rupiah.addEventListener('keyup', function(e){
+        // tambahkan 'Rp.' pada saat form di ketik
+        // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+        rupiah.value = formatRupiah(this.value, 'Rp. ');
+    });
+
+    /* Fungsi formatRupiah */
+    function formatRupiah(angka, prefix){
+        var number_string = angka.replace(/[^,\d]/g, '').toString(),
+        split   		= number_string.split(','),
+        sisa     		= split[0].length % 3,
+        rupiah     		= split[0].substr(0, sisa),
+        ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+
+        // tambahkan titik jika yang di input sudah menjadi angka ribuan
+        if(ribuan){
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+    }
+</script>
+
+
+
+<script type="text/javascript">
+var penghimpun = document.getElementById('penghimpun');
+    penghimpun.addEventListener('keyup', function(e){
+        // tambahkan 'Rp.' pada saat form di ketik
+        // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+        penghimpun.value = formatRupiah(this.value, 'Rp. ');
+    });
+
+    /* Fungsi formatRupiah */
+    function formatRupiah(angka, prefix){
+        var number_string = angka.replace(/[^,\d]/g, '').toString(),
+        split   		= number_string.split(','),
+        sisa     		= split[0].length % 3,
+        rupiah     		= split[0].substr(0, sisa),
+        ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+
+        // tambahkan titik jika yang di input sudah menjadi angka ribuan
+        if(ribuan){
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+    }
+
+
+
+    var salur = document.getElementById('dana_tersalurkan');
+    salur.addEventListener('keyup', function(e){
+        // tambahkan 'Rp.' pada saat form di ketik
+        // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+        salur.value = formatRupiah(this.value, 'Rp. ');
+    });
+
+    /* Fungsi formatRupiah */
+    function formatRupiah(angka, prefix){
+        var number_string = angka.replace(/[^,\d]/g, '').toString(),
+        split   		= number_string.split(','),
+        sisa     		= split[0].length % 3,
+        rupiah     		= split[0].substr(0, sisa),
+        ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+
+        // tambahkan titik jika yang di input sudah menjadi angka ribuan
+        if(ribuan){
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+    }
+
+    var donatur = document.getElementById('donatur');
+    donatur.addEventListener('keyup', function(e){
+        // tambahkan 'Rp.' pada saat form di ketik
+        // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+        donatur.value = formatRupiah(this.value, 'Rp. ');
+    });
+
+    /* Fungsi formatRupiah */
+    function formatRupiah(angka, prefix){
+        var number_string = angka.replace(/[^,\d]/g, '').toString(),
+        split   		= number_string.split(','),
+        sisa     		= split[0].length % 3,
+        rupiah     		= split[0].substr(0, sisa),
+        ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+
+        // tambahkan titik jika yang di input sudah menjadi angka ribuan
+        if(ribuan){
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+    }
+    
+</script>

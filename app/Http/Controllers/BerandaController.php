@@ -225,30 +225,38 @@ class BerandaController extends Controller
     public function editDanaTersalurkan()
     {
         $data = DB::table('penyaluran')->latest('updated_at')->first();
+        // return $data;
         return view('index.data-penyaluran', compact('data'));
     }
 
     public function storeDanaTersalurkan(Request $request)
     {
-        $validated = $request->validate(
-            [
-                'penerima' => 'required|min:0|numeric',
-                'penghimpun' => 'required|min:0|numeric',
-                'dana_tersalurkan' => 'required|min:0|numeric',
-                'donatur' => 'required|min:0|numeric',
-            ]
-        );
 
-        if (!$validated) {
-            return redirect()->back()->withErrors($validated)->withInput();
-        }
+        $penerima = (int) preg_replace('/\D/', '', $request->penerima);
+        $dana_tersalurkan = (int) preg_replace('/\D/', '', $request->dana_tersalurkan);
+        $penghimpun = (int) preg_replace('/\D/', '', $request->penghimpun);
+        $donatur = (int) preg_replace('/\D/', '', $request->donatur);
+
+        // $validated = $request->validate(
+        //     [
+        //         'penerima' => 'required|min:0|numeric',
+        //         'penghimpun' => 'required|min:0|numeric',
+        //         'dana_tersalurkan' => 'required|min:0|numeric',
+        //         'donatur' => 'required|min:0|numeric',
+        //     ]
+        // );
+
+        // if (!$validated) {
+        //     return redirect()->back()->withErrors($validated)->withInput();
+        // }
+        // return $penerima;
 
         DB::table('penyaluran')->updateOrInsert(
             [
-                'penerima' => $request->penerima,
-                'penghimpun' => $request->penghimpun,
-                'dana_tersalurkan' => $request->dana_tersalurkan,
-                'donatur' => $request->donatur,
+                'penerima' => $penerima,
+                'penghimpun' => $penghimpun,
+                'dana_tersalurkan' => $dana_tersalurkan,
+                'donatur' => $donatur,
                 'updated_at' => Carbon::now(),
             ]
         );

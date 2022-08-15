@@ -118,7 +118,11 @@
                         <div class="mb-2"><img src="assets/img/portfolio/logo/penerima.png"
                                 style="max-width: 300px; max-height: 200px;"><i class="fs-1 text-primary"></i></div>
                         <h3 class="h5 mb-2" style="color: #FF9900;">PENERIMA</h3>
+                        @if ($penyalur->penerima == null)
+                            Tidak Ada Data
+                        @else
                         <p class="h2 mb-2" style="color: #FF9900;"><b>{{$penyalur->penerima}}</b></p>
+                        @endif
                         <div>&nbsp;</div>
                     </div>
                 </div>
